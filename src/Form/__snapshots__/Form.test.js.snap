@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<form>
+  <input
+    name="name"
+    onChange={[Function]}
+    placeholder="Product Name"
+    type="text"
+    value=""
+  />
+  <input
+    name="description"
+    onChange={[Function]}
+    placeholder="Product Description"
+    type="text"
+    value=""
+  />
+  <input
+    name="price"
+    onChange={[Function]}
+    placeholder="Product price"
+    type="text"
+    value=""
+  />
+  <button
+    disabled={true}
+    onClick={[Function]}
+  >
+    Add Purchase
+  </button>
+</form>
+`;

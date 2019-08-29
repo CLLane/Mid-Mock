@@ -31,6 +31,7 @@ export default class App extends Component {
   // }
 
   createCard = (e, card) => {
+    console.log(e);
     e.preventDefault();
     let cardWithId = {...card, id: Date.now()}
     // this.postToApi(cardWithId)
