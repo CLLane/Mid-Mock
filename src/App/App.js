@@ -19,13 +19,18 @@ export default class App extends Component {
     .catch(error => error.message)
   }
 
+  createCard = (e, card) => {
+    e.preventDefault();
+    this.setState({ purchases: [...this.state.purchases, card]})
+  }
+
   render() {
     return (
       <div className="App">
         <header>
           <h1 className='app-title'>My Order History</h1>
           <div className='purchase-form'>
-          <Form />
+          <Form createCard={ this.createCard }/>
           </div>
         </header>
         <div className='purchase-container'>
