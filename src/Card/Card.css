@@ -1,12 +1,7 @@
-.purchase-container {
-  height: 700px;
-  background:#CECECE;
-  display: flex;
-
-}
 
 img {
   height: 150px;
   width: 150px;
   justify-content: start;
 }
+

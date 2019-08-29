@@ -13,11 +13,10 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-//   it('should update state when createCard is called', () => {
-//     const mockEvent = {target: {img: 'url', name: 'Chris', description: 'Has a small amount of confidence in this test...lol', price: 'to damn high'}}
-//   })
+  // it('should setState when createCard is called', () => {
+  // wrapper.instance().createCard = jest.fn()
+  
 
-//     const expectedName = {name: 'Chris'}
 
-//     wrapper.instance().createCard(mockEvent)
+  // })
 })

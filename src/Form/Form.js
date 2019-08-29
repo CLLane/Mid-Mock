@@ -48,8 +48,9 @@ resetInputs = () => {
           value={this.state.price}
           onChange={(e) => this.updateInputs(e)}>
         </input>
-        <button disabled={ !this.state.name || !this.state.name || !this.state.price} onClick={(e) => { this.props.createCard(e, this.state);
-              this.resetInputs()
+        <button disabled={ !this.state.name || !this.state.name || !this.state.price} onClick={(e) => { 
+          this.props.createCard(e, this.state);
+          this.resetInputs();
             }}
         >Add Purchase</button>
       </form>

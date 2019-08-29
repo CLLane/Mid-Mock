@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Container from '../Container/Container.js'
-import { getCards } from '../Fetch/fetch.js'
 import Form from '../Form/Form.js'
 import './App.css';
 
@@ -17,24 +16,27 @@ export default class App extends Component {
     .then(response => response.json())
     .then(data => this.setState({ purchases: data}))
     .catch(error => error.message)
-  }
 
-  // postToApi(card){
-  //   const options = {
-  //     method: "POST",
-  //     body: JSON.stringify(card),
-  //     header: {
-  //       "Content-Type": "application/json" 
-  //     }
-  //   }
-  //   fetch('http://localhost:3001/api/v1/purchases', options).then(res => res.json).then(data => this.setState({ purchases: [ ...this.state, data]})).catch(err => err.message)
-  // }
+  }
+ 
+
+    postToApi(card){
+        const options = {
+          method: 'POST',
+          body: JSON.stringify({ ...card }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+      }
+      fetch('http://localhost:3001/api/v1/purchases/', options).then(res => res.json).catch(err => err.message)
+    }
+
 
   createCard = (e, card) => {
     console.log(e);
     e.preventDefault();
     let cardWithId = {...card, id: Date.now()}
-    // this.postToApi(cardWithId)
+    this.postToApi(cardWithId)
     this.setState({ purchases: [...this.state.purchases, cardWithId]})
   }
 
@@ -48,7 +50,7 @@ export default class App extends Component {
           </div>
         </header>
         <div className='purchase-container'>
-            <Container data={this.state.purchases} />
+            <Container  data={this.state.purchases} />
         </div>
       </div>
     );
