@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Container from '../Container/Container.js'
+import { getCards } from '../Fetch/fetch.js'
+import Form from '../Form/Form.js'
 import './App.css';
 
 export default class App extends Component {
@@ -23,6 +25,7 @@ export default class App extends Component {
         <header>
           <h1 className='app-title'>My Order History</h1>
           <div className='purchase-form'>
+          <Form />
           </div>
         </header>
         <div className='purchase-container'>
