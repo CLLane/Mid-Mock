@@ -19,9 +19,22 @@ export default class App extends Component {
     .catch(error => error.message)
   }
 
+  // postToApi(card){
+  //   const options = {
+  //     method: "POST",
+  //     body: JSON.stringify(card),
+  //     header: {
+  //       "Content-Type": "application/json" 
+  //     }
+  //   }
+  //   fetch('http://localhost:3001/api/v1/purchases', options).then(res => res.json).then(data => this.setState({ purchases: [ ...this.state, data]})).catch(err => err.message)
+  // }
+
   createCard = (e, card) => {
     e.preventDefault();
-    this.setState({ purchases: [...this.state.purchases, card]})
+    let cardWithId = {...card, id: Date.now()}
+    // this.postToApi(cardWithId)
+    this.setState({ purchases: [...this.state.purchases, cardWithId]})
   }
 
   render() {
